@@ -1,0 +1,45 @@
+/* agenda.css — Módulo Agenda Médico */
+
+.agenda-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 20px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.06);
+    margin-bottom: 20px;
+}
+.agenda-nav__titulo { font-size: 1.1rem; font-weight: 700; color: #1a2e44; text-transform: capitalize; }
+
+/* CALENDARIO */
+.calendario-wrap { background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 14px rgba(0,0,0,.06); margin-bottom: 24px; }
+.calendario-header { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 8px; }
+.calendario-header__dia { text-align: center; font-size: .75rem; font-weight: 700; color: #888; padding: 6px 0; text-transform: uppercase; }
+.calendario-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.calendario-dia { min-height: 80px; border-radius: 8px; padding: 6px; background: #f9fafb; border: 1px solid #eee; font-size: .78rem; }
+.calendario-dia--vacio { background: transparent; border: none; }
+.calendario-dia--hoy { background: #e8f4fb; border-color: #0078d7; }
+.calendario-dia--hoy .calendario-dia__num { color: #0078d7; font-weight: 800; }
+.calendario-dia--con-citas { border-color: #00875a; }
+.calendario-dia__num { display: block; font-weight: 700; color: #1a2e44; margin-bottom: 4px; }
+.calendario-cita { background: #0078d7; color: #fff; border-radius: 4px; padding: 2px 4px; font-size: .65rem; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.calendario-cita--virtual { background: #6f42c1; }
+.calendario-mas { font-size: .65rem; color: #888; text-align: center; }
+
+/* SLOTS */
+.slots-grupo { margin-bottom: 20px; }
+.slots-grupo__fecha { font-size: .9rem; font-weight: 700; color: #0078d7; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; text-transform: capitalize; }
+.slots-lista { display: flex; flex-wrap: wrap; gap: 8px; }
+.slot-item { display: flex; align-items: center; gap: 10px; background: #f9fafb; border: 1px solid #eee; border-radius: 10px; padding: 8px 14px; font-size: .85rem; }
+.slot-item--disponible { border-color: #28a745; background: #f0fff4; }
+.slot-item--ocupado    { border-color: #0078d7; background: #f0f7ff; }
+.slot-item--cancelado  { border-color: #dc3545; background: #fff5f5; opacity: .7; }
+.slot-item__hora { font-weight: 700; color: #1a2e44; min-width: 44px; }
+.slot-item__estado { color: #555; display: flex; align-items: center; gap: 6px; }
+.badge-emergencia { background: #fdecea; color: #dc3545; font-size: .68rem; font-weight: 700; padding: 2px 8px; border-radius: 8px; }
+
+@media (max-width: 700px) {
+    .calendario-dia { min-height: 50px; }
+    .calendario-cita { display: none; }
+}

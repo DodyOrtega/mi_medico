@@ -1,0 +1,75 @@
+/* citas.css — Módulo Citas Médico */
+
+/* FILTRO ACTIVO */
+.btn-filtro--activo {
+    background: #0078d7 !important;
+    color: #fff !important;
+}
+
+/* LISTA DE CITAS */
+.citas-lista-completa { display: flex; flex-direction: column; gap: 12px; }
+
+.cita-completa {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 20px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.06);
+    border-left: 4px solid #e5e7eb;
+}
+.cita-completa--futura { border-left-color: #0078d7; }
+.cita-completa--pasada { border-left-color: #9ca3af; opacity: .85; }
+
+.cita-completa__fecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 52px;
+    text-align: center;
+}
+.cita-completa__dia  { font-size: 1.5rem; font-weight: 800; color: #1a2e44; line-height: 1; }
+.cita-completa__mes  { font-size: .72rem; color: #888; text-transform: uppercase; font-weight: 600; }
+.cita-completa__hora { font-size: .78rem; color: #0078d7; font-weight: 700; margin-top: 2px; }
+
+.cita-completa__body { flex: 1; }
+.cita-completa__paciente { display: block; font-weight: 700; color: #1a2e44; font-size: .95rem; }
+.cita-completa__motivo   { font-size: .82rem; color: #666; display: block; margin: 2px 0; }
+.cita-completa__diag     { font-size: .78rem; color: #0078d7; display: block; }
+
+.cita-completa__side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+/* RESUMEN PACIENTE */
+.paciente-resumen {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #f0f7ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+}
+.paciente-resumen__avatar {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: #0078d7;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+.paciente-resumen strong { display: block; font-size: 1rem; color: #1a2e44; }
+.paciente-resumen span   { display: block; font-size: .82rem; color: #666; }
+.alerta-alergia { color: #dc3545 !important; font-weight: 600; }
+
+@media (max-width: 600px) {
+    .cita-completa { flex-wrap: wrap; }
+    .cita-completa__side { align-items: flex-start; }
+}

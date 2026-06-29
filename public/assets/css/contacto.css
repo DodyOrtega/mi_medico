@@ -1,0 +1,168 @@
+/* ═══════════════════════════════════════════════
+   contacto.css  —  Página "Contacto"
+   MiMedico · Fase 2
+═══════════════════════════════════════════════ */
+
+.contacto-section {
+    background: #f4f8fb;
+    padding: 70px 20px;
+}
+
+.contacto-section .section-title {
+    text-align: center;
+    color: #0076A8;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    margin: 0 0 10px;
+}
+
+.contacto-section .section-sub {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+    margin: 0 0 40px;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.contacto-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.07);
+}
+
+.contacto-card h3 {
+    color: #0076A8;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 18px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e8f4fb;
+}
+
+.contacto-card p {
+    color: #444;
+    font-size: .95rem;
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contacto-card p i {
+    color: #0076A8;
+    width: 16px;
+    text-align: center;
+}
+
+/* Redes sociales */
+.redes { margin-top: 24px; }
+
+.redes p {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 12px !important;
+}
+
+.redes-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.redes-icons a img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.redes-icons a:hover img {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,.2);
+}
+
+/* Formulario */
+.contacto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+    padding: 12px 14px;
+    border: 1px solid #dde8f0;
+    border-radius: 8px;
+    font-size: .93rem;
+    color: #333;
+    background: #f9fbfd;
+    transition: border-color .2s, box-shadow .2s;
+    font-family: inherit;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+    outline: none;
+    border-color: #0076A8;
+    box-shadow: 0 0 0 3px rgba(0,118,168,.1);
+    background: #fff;
+}
+
+.contacto-form textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.contacto-form button {
+    padding: 13px;
+    background: #0076A8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: .97rem;
+    cursor: pointer;
+    transition: background .25s ease, transform .2s ease;
+}
+
+.contacto-form button:hover {
+    background: #005f87;
+    transform: translateY(-2px);
+}
+
+/* Mapa */
+.mapa-wrap {
+    background: #fff;
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.07);
+}
+
+.mapa-wrap iframe {
+    display: block;
+    border-radius: 8px;
+}
+
+/* Helpers */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+    .contacto-section {
+        padding: 50px 16px;
+    }
+}

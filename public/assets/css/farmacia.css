@@ -1,0 +1,82 @@
+/* ═══════════════════════════════════════════════════
+   farmacia.css — Módulo Farmacia
+   Color del sistema: #0078d7 (azul MiMédico)
+═══════════════════════════════════════════════════ */
+
+/* ── BASE ──────────────────────────────────────── */
+.farm-body { background: #f0f4fb; min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ── TOPBAR ────────────────────────────────────── */
+.farm-topbar { background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.06); position: sticky; top: 0; z-index: 100; }
+.farm-topbar__inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 84px; display: flex; align-items: center; justify-content: space-between; }
+.farm-topbar__brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0078d7; font-weight: 700; font-size: 1rem; }
+.farm-topbar__brand img { height: 76px; width: auto; }
+.farm-topbar__actions { display: flex; align-items: center; gap: 20px; }
+.farm-topbar__user { display: flex; align-items: center; gap: 6px; color: #374151; font-size: .88rem; font-weight: 500; }
+.farm-topbar__user i { color: #0078d7; }
+.farm-topbar__link { display: flex; align-items: center; gap: 6px; color: #555; font-size: .88rem; font-weight: 500; text-decoration: none; background: none; border: none; cursor: pointer; padding: 0; transition: color .2s; }
+.farm-topbar__link:hover { color: #0078d7; }
+.farm-topbar__link--danger:hover { color: #ef4444; }
+.farm-topbar__logout-form { display: inline-flex; }
+
+/* ── MAIN Y FOOTER ─────────────────────────────── */
+.farm-main { flex: 1; max-width: 1200px; margin: 0 auto; padding: 32px 24px; width: 100%; }
+.farm-footer { background: linear-gradient(135deg, #1a2e44, #34495e); color: #fff; text-align: center; padding: 24px 20px; border-top: 4px solid #0078d7; }
+.farm-footer p { margin: 5px 0; font-size: .88rem; opacity: .9; }
+
+/* ── SECCIÓN ───────────────────────────────────── */
+.farm-section { background: #fff; border-radius: 16px; padding: 24px 28px; margin-bottom: 24px; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+.farm-section__title { display: flex; align-items: center; gap: 10px; color: #1a2e44; font-size: 1.1rem; font-weight: 700; margin: 0 0 18px; }
+.farm-section__title i { color: #0078d7; }
+
+/* ── BUSCADOR ──────────────────────────────────── */
+.farm-search-form  { display: flex; gap: 12px; max-width: 600px; }
+.farm-search-input { flex: 1; padding: 12px 16px; border: 1.5px solid #e5e7eb; border-radius: 10px; font-size: .9rem; color: #374151; transition: border-color .2s; }
+.farm-search-input:focus { outline: none; border-color: #0078d7; box-shadow: 0 0 0 3px rgba(0,120,215,.12); }
+.farm-search-btn { display: inline-flex; align-items: center; gap: 7px; background: linear-gradient(135deg,#0078d7,#005fa3); color: #fff; border: none; border-radius: 10px; padding: 12px 22px; font-size: .875rem; font-weight: 600; cursor: pointer; transition: all .2s; white-space: nowrap; }
+.farm-search-btn:hover { background: linear-gradient(135deg,#005fa3,#004a80); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,120,215,.3); }
+
+/* ── ALERTAS ───────────────────────────────────── */
+.farm-alert-error { background: #fdecea; color: #7f1d1d; border: 1px solid #fca5a5; border-radius: 10px; padding: 11px 16px; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; font-size: .875rem; }
+
+/* ── TARJETA PACIENTE ──────────────────────────── */
+.farm-paciente { background: #fff; border-radius: 14px; padding: 20px 24px; margin-bottom: 22px; box-shadow: 0 4px 14px rgba(0,0,0,.06); display: flex; align-items: center; gap: 18px; border-left: 4px solid #0078d7; }
+.farm-paciente__avatar { width: 56px; height: 56px; background: linear-gradient(135deg,#0078d7,#005fa3); border-radius: 50%; color: #fff; font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.farm-paciente__nombre { font-weight: 700; color: #1a2e44; font-size: 1.1rem; margin-bottom: 6px; }
+.farm-paciente__badges { display: flex; flex-wrap: wrap; gap: 7px; }
+.farm-badge { background: #e8f4fb; color: #0078d7; border-radius: 10px; padding: 3px 10px; font-size: .75rem; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+
+/* ── RECETA ────────────────────────────────────── */
+.farm-receta { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,.05); }
+.farm-receta__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 2px solid #e8f4fb; flex-wrap: wrap; gap: 8px; }
+.farm-receta__titulo { font-weight: 800; font-size: 1rem; color: #0078d7; letter-spacing: .04em; text-transform: uppercase; }
+.farm-receta__fecha { font-size: .8rem; color: #6b7280; display: flex; align-items: center; gap: 5px; }
+.farm-info-block { margin-bottom: 14px; padding: 12px 16px; border-radius: 10px; }
+.farm-info-block__label { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 5px; display: flex; align-items: center; gap: 5px; }
+.farm-info-block__content { font-size: .88rem; color: #374151; line-height: 1.55; }
+.farm-info-block--medico { background: #eff6ff; border-left: 3px solid #0078d7; }
+.farm-info-block--medico .farm-info-block__label { color: #0078d7; }
+.farm-info-block--diag { background: #f8fafc; border-left: 3px solid #64748b; }
+.farm-info-block--diag .farm-info-block__label { color: #64748b; }
+.farm-info-block--receta { background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 10px; }
+.farm-info-block--receta .farm-info-block__label { color: #1e40af; }
+.farm-firma { text-align: center; padding: 16px 0 4px; margin-top: 10px; display: flex; flex-direction: column; gap: 4px; color: #374151; font-size: .82rem; border-top: 1px dashed #e5e7eb; }
+
+/* ── BOTONES ───────────────────────────────────── */
+.farm-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 18px; border: none; border-radius: 10px; font-size: .82rem; font-weight: 600; cursor: pointer; transition: all .2s; text-decoration: none; }
+.farm-btn--print { background: #eff6ff; color: #0078d7; border: 1.5px solid #bfdbfe; }
+.farm-btn--print:hover { background: #0078d7; color: #fff; }
+
+/* ── ESTADO VACÍO ──────────────────────────────── */
+.farm-empty { text-align: center; padding: 48px 20px; color: #aaa; }
+.farm-empty i { font-size: 3rem; display: block; margin-bottom: 12px; color: #dee2e6; }
+.farm-empty p { margin: 0; font-size: .95rem; }
+
+/* ── RESPONSIVE ────────────────────────────────── */
+@media (max-width: 700px) {
+    .farm-topbar__inner { flex-wrap: wrap; height: auto; padding: 12px 16px; gap: 10px; }
+    .farm-topbar__user span, .farm-topbar__link span { display: none; }
+    .farm-main { padding: 20px 14px; }
+    .farm-search-form { flex-direction: column; }
+    .farm-paciente { flex-direction: column; text-align: center; }
+}

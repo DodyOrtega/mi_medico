@@ -1,0 +1,63 @@
+/* ═══════════════════════════════════════════════════
+   laboratorio.css — Módulo Laboratorio Clínico
+   Color del sistema: #0078d7 (azul MiMédico)
+═══════════════════════════════════════════════════ */
+
+/* ── BASE ──────────────────────────────────────── */
+.lab-body { background: #f0f4fb; min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ── TOPBAR ────────────────────────────────────── */
+.lab-topbar { background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.06); position: sticky; top: 0; z-index: 100; }
+.lab-topbar__inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 84px; display: flex; align-items: center; justify-content: space-between; }
+.lab-topbar__brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0078d7; font-weight: 700; font-size: 1rem; }
+.lab-topbar__brand img { height: 76px; width: auto; }
+.lab-topbar__actions { display: flex; align-items: center; gap: 20px; }
+.lab-topbar__user { display: flex; align-items: center; gap: 6px; color: #374151; font-size: .88rem; font-weight: 500; }
+.lab-topbar__user i { color: #0078d7; }
+.lab-topbar__link { display: flex; align-items: center; gap: 6px; color: #555; font-size: .88rem; font-weight: 500; text-decoration: none; background: none; border: none; cursor: pointer; padding: 0; transition: color .2s; }
+.lab-topbar__link:hover { color: #0078d7; }
+.lab-topbar__link--danger:hover { color: #ef4444; }
+.lab-topbar__logout-form { display: inline-flex; }
+
+/* ── MAIN Y FOOTER ─────────────────────────────── */
+.lab-main { flex: 1; max-width: 1200px; margin: 0 auto; padding: 32px 24px; width: 100%; }
+.lab-footer { background: linear-gradient(135deg, #1a2e44, #34495e); color: #fff; text-align: center; padding: 24px 20px; border-top: 4px solid #0078d7; }
+.lab-footer p { margin: 5px 0; font-size: .88rem; opacity: .9; }
+
+/* ── SECCIÓN GENÉRICA ──────────────────────────── */
+.lab-section { background: #fff; border-radius: 16px; padding: 24px 28px; margin-bottom: 24px; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+.lab-section__title { display: flex; align-items: center; gap: 10px; color: #1a2e44; font-size: 1.1rem; font-weight: 700; margin: 0 0 18px; }
+.lab-section__title i { color: #0078d7; }
+
+/* ── BUSCADOR ──────────────────────────────────── */
+.lab-search-form { display: flex; gap: 12px; max-width: 600px; }
+.lab-search-input { flex: 1; padding: 12px 16px; border: 1.5px solid #e5e7eb; border-radius: 10px; font-size: .9rem; color: #374151; transition: border-color .2s; }
+.lab-search-input:focus { outline: none; border-color: #0078d7; box-shadow: 0 0 0 3px rgba(0,120,215,.12); }
+.lab-search-btn { display: inline-flex; align-items: center; gap: 7px; background: linear-gradient(135deg,#0078d7,#005fa3); color: #fff; border: none; border-radius: 10px; padding: 12px 22px; font-size: .875rem; font-weight: 600; cursor: pointer; transition: all .2s; white-space: nowrap; }
+.lab-search-btn:hover { background: linear-gradient(135deg,#005fa3,#004a80); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,120,215,.3); }
+
+/* ── ALERTAS ───────────────────────────────────── */
+.lab-alert-error { background: #fdecea; color: #7f1d1d; border: 1px solid #fca5a5; border-radius: 10px; padding: 11px 16px; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; font-size: .875rem; }
+.lab-alert-info  { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; border-radius: 10px; padding: 11px 16px; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; font-size: .875rem; }
+
+/* ── TARJETA PACIENTE ──────────────────────────── */
+.lab-paciente { background: #fff; border-radius: 14px; padding: 20px 24px; margin-bottom: 22px; box-shadow: 0 4px 14px rgba(0,0,0,.06); display: flex; align-items: center; gap: 18px; border-left: 4px solid #0078d7; }
+.lab-paciente__avatar { width: 56px; height: 56px; background: linear-gradient(135deg,#0078d7,#005fa3); border-radius: 50%; color: #fff; font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.lab-paciente__nombre { font-weight: 700; color: #1a2e44; font-size: 1.1rem; margin-bottom: 6px; }
+.lab-paciente__badges { display: flex; flex-wrap: wrap; gap: 7px; }
+.lab-badge { background: #e8f4fb; color: #0078d7; border-radius: 10px; padding: 3px 10px; font-size: .75rem; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+.lab-badge--blue { background: #e8f4fb; color: #0078d7; }
+
+/* ── ESTADO VACÍO ──────────────────────────────── */
+.lab-empty { text-align: center; padding: 48px 20px; color: #aaa; }
+.lab-empty i { font-size: 3rem; display:block; margin-bottom: 12px; color: #dee2e6; }
+.lab-empty p { margin: 0; font-size: .95rem; }
+
+/* ── RESPONSIVE ────────────────────────────────── */
+@media (max-width: 700px) {
+    .lab-topbar__inner { flex-wrap: wrap; height: auto; padding: 12px 16px; gap: 10px; }
+    .lab-topbar__user span, .lab-topbar__link span { display: none; }
+    .lab-main { padding: 20px 14px; }
+    .lab-search-form { flex-direction: column; }
+    .lab-paciente { flex-direction: column; text-align: center; }
+}

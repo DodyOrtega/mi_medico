@@ -1,0 +1,41 @@
+/* ═══════════════════════════════════════════════
+   configuracion.css  —  Módulo Configuración
+   MiMedico · Fase 4.5
+═══════════════════════════════════════════════ */
+
+.config-tabs {
+    display: flex;
+    gap: 6px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.06);
+    flex-wrap: wrap;
+}
+
+.config-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border: none;
+    background: transparent;
+    color: #666;
+    font-weight: 600;
+    font-size: .88rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.config-tab:hover { background: #f5f7fa; color: #0078d7; }
+
+.config-tab--active {
+    background: linear-gradient(135deg, #0078d7, #005fa3);
+    color: #fff;
+}
+
+.config-tab--active:hover { color: #fff; }
+
+.config-panel { display: none; }
+.config-panel--active { display: block; }
