@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('titulo', 'Panel del Médico') – MiMedico</title>
-    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo_transparente.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo_transparente_casa.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/medico.css') }}">

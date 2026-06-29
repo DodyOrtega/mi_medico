@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('titulo', 'Mi Médico') — Telemedicina Ecuador</title>
-    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo_transparente.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo_transparente_casa.png') }}">
 
     {{-- Vite compila Tailwind + CSS propio --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])

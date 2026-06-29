@@ -592,11 +592,21 @@ class PacienteController extends Controller
         $cedula    = $this->cedula();
         $prioridad = $request->input('prioridad', 'media');
 
-        $medico = DB::table('PERSONAL_MEDICO as pm')
-            ->join('PERSONAS as p', 'pm.cedula', '=', 'p.cedula')
-            ->where('pm.tipo', 'Medico')
-            ->where('p.estado', 'activo')
-            ->value('pm.cedula');
+        // Médico de la cita más reciente del paciente
+        $medico = DB::table('CITAS')
+            ->where('cedula_paciente', $cedula)
+            ->whereNotNull('cedula_medico')
+            ->orderByDesc('fecha_hora')
+            ->value('cedula_medico');
+
+        // Fallback: cualquier médico activo si el paciente no tiene citas previas
+        if (! $medico) {
+            $medico = DB::table('PERSONAL_MEDICO as pm')
+                ->join('PERSONAS as p', 'pm.cedula', '=', 'p.cedula')
+                ->where('pm.tipo', 'Medico')
+                ->where('p.estado', 'activo')
+                ->value('pm.cedula');
+        }
 
         if (! $medico) {
             return response()->json([
@@ -614,6 +624,33 @@ class PacienteController extends Controller
             'es_emergencia'     => 1,
             'motivo_emergencia' => "[{$prioridad}] " . $request->descripcion,
         ]);
+
+        // Notificar al médico por WhatsApp
+        $paciente   = DB::table('PERSONAS')->where('cedula', $cedula)->first();
+        $medicoData = DB::table('PERSONAS')->where('cedula', $medico)->first();
+
+        if ($medicoData && $medicoData->telefono) {
+            $nombrePac   = strtoupper(trim(($paciente->nombres ?? '') . ' ' . ($paciente->apellido1 ?? '')));
+            $telPac      = $paciente->telefono ?? 'No registrado';
+            $linkPaciente = url("/medico/pacientes/{$cedula}");
+
+            $mensaje = implode("\n", [
+                "🚨 *EMERGENCIA - Mi Médico*",
+                "",
+                "👤 Paciente: {$nombrePac}",
+                "📋 Cédula: {$cedula}",
+                "📞 Teléfono: {$telPac}",
+                "",
+                "📝 Motivo: " . $request->descripcion,
+                "",
+                "⏰ " . now()->isoFormat('D [de] MMMM [de] YYYY · HH:mm'),
+                "",
+                "🔗 Ver historial del paciente:",
+                $linkPaciente,
+            ]);
+
+            SmsService::enviar($medicoData->telefono, $mensaje);
+        }
 
         return response()->json([
             'success' => true,

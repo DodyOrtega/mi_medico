@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('titulo', 'Panel de Administración') – MiMedico</title>
-    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo_transparente.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo_transparente_casa.png') }}">
 
     {{-- Vite: Tailwind + CSS propio (mismo pipeline que el sitio público) --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
